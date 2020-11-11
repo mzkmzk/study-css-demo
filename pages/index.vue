@@ -1,73 +1,74 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        study-css-demo
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div>
+    <h1 class="index__title">
+      study-css-demo
+    </h1>
+    <div
+      class="index__container"
+    >
+      <h3 class="index__type-title">
+        css3
+      </h3>
+      <IndexList
+        class="index__index-list"
+        :list="css3List"
+      />
+      <h3 class="index__type-title">
+        css2
+      </h3>
+      <IndexList :list="css2List" />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import IndexList from '~/components/index/list'
+
+export default {
+  components: {
+    IndexList
+  },
+  data () {
+    return {
+      css3List: [
+        {
+          title: 'linear-gradient',
+          links: [
+            { name: '基本语法', url: '/css3/linear-gradient/base' }
+          ]
+        }
+      ],
+      css2List: [
+
+      ]
+    }
+  }
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+<style lang="scss" scoped>
+.index__title {
+  margin-top: 100px;
+  margin-bottom: 30px;
   text-align: center;
+  color: #409EFF;
+  font-size: 40px;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.index__container{
+
+  margin: 0 10%;
+
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.index__type-title {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #909399
+
 }
 
-.links {
-  padding-top: 15px;
+.index__index-list:not(:last-child) {
+  margin-bottom: 50px;
 }
 </style>
