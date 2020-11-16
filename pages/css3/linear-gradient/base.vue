@@ -18,7 +18,7 @@
             backgroundImage: `linear-gradient(${angle}, red 100px, yellow 200px)`
           }"
         />
-        <div class="aaa">
+        <div>
           <el-button
             v-for="(angleNum, index) in angles"
             :key="`angle-change-${index}`"

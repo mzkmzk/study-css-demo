@@ -14,7 +14,7 @@
           {{ css }}
         </highlight-code>
       </div>
-      <div>
+      <div v-if="js">
         <highlight-code slot="codeText" lang="javascript">
           {{ js }}
         </highlight-code>
